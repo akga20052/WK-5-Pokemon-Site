@@ -55,7 +55,7 @@ HINT: You will need to add the following dependencies to your virtual environmen
 - pip install python-dotenv
 
   # Day 5- Add User Login to your Pokemon App
-  For homework tonight:
+For homework tonight:
 Your pokemon form will now catch any searched pokemon
 You will need to:
         make a table to link the Pokemon to the User they belong too
