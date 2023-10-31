@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block styles %}
+    <link rel="stylesheet" href="../static/styles/pokemon.css">
+{% endblock %}
+
+{% block title %}
+Search Pokemanes
+{% endblock %}
+
+{% block content %}
+{% include './includes/nav.html'%}
+<div class="form-container">
+    <form method="POST" class="w-25 mx-auto">
+        {{ form.hidden_tag() }}
+        <div class="mb-3">
+            {{ form.pokemane.label(class='form-label') }}
+            {{ form.pokemane(class='form-control') }}
+        </div>
+        {{ form.submit_btn(class='btn btn-primary')}}
+    </form>
+</div>
+
+{% if pokemanes_dict %}
+    <div class = "card-container">
+        <div class="card" style="width: 18rem;">
+            <img src="{{ pokemanes_dict.sprite_url }}" class="card-img-top" alt="{{ pokemanes_dict.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ pokemanes_dict.name.title() }}</h5>
+                <p class="card-text">Base Experience: {{ pokemanes_dict.base_experience }}</p>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">HP Base Stat: {{ pokemanes_dict.hp_base_stat }}</li>
+                <li class="list-group-item">Defense Base Stat: {{ pokemanes_dict.defense_base_stat }}</li>
+                <li class="list-group-item">Attack Base Stat: {{ pokemanes_dict.atack_base_stat }}</li>
+                <li class="list-group-item">Ability Name: {{ pokemanes_dict.ability_name }}</li>
+            </ul>
+            <div class="card-body"> 
+                <form method="POST" action="{{ url_for('main.catch_pokemon', pokemon_name=pokemanes_dict.name) }}">
+                    {{ form.hidden_tag() }}
+                    <button type="submit" class="btn btn-success">Catch {{ pokemanes_dict.name }}</button>
+                </form>
+             
+            </div>
+        </div>
+    </div>
+    <h2>Your Team</h2>
+    <div class="card-container">
+        {% for pokemon in current_user.team_pokemons %}
+        <div class="card" style="width: 18rem;">
+            <img src="{{ pokemon.sprite_url }}" class="card-img-top" alt="{{ pokemon.name }}">
+            <div class="card-body">
+                <h5 class="card-title">{{ pokemon.name.title() }}</h5>
+                <p class="card-text">Base Experience: {{ pokemon.base_experience }}</p>
+                <p class="card-text">HP Base Stat: {{ pokemon.hp_base_stat }}</p>
+                <p class="card-text">Defense Base Stat: {{ pokemon.defense_base_stat }}</p>
+                <p class="card-text">Attack Base Stat: {{ pokemon.attack_base_stat }}</p>
+                <p class="card-text">Ability Name: {{ pokemon.ability_name }}</p>
+            </div>
+            <div class="card-body"> 
+                <a href="{{ url_for('main.release_pokemon', pokemon_id=pokemon.id) }}" class="btn btn-danger">Release</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endif %}
+{% endblock %}

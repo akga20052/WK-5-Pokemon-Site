@@ -1,0 +1,34 @@
+{% extends 'base.html'%}
+
+{% block styles %}
+    <link rel="stylesheet" href="../static/styles/login.css"> 
+{% endblock %}
+
+{% block title %}
+  Signup Page
+{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <h1>Sign Up</h1>
+      <form method="POST" class="w-50 mx-auto">
+          {{ form.hidden_tag() }}
+          <div class="mb-3">
+              {{ form.first_name(class='form-control', placeholder='First Name')}}
+          </div>
+          <div class="mb-3">
+              {{ form.last_name(class='form-control', placeholder='Last Name')}}
+          </div>
+          <div class="mb-3">
+            {{ form.email(class='form-control', placeholder="Email Address - We'll Never Share Or Sell Your Personal Information")}}
+          </div>
+          <div class="mb-3">
+            {{ form.password(class='form-control', placeholder='Password') }}
+          </div>
+          <div class="mb-3">
+              {{ form.confirm_password(class='form-control', placeholder='Confirm Password')}}
+          </div>
+          {{ form.submit_btn(class='btn btn-dark d-block mx-auto') }}
+      </form>
+  </div>
+{% endblock %}

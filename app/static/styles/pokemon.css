@@ -1,0 +1,76 @@
+html, body {
+    height: 100%;
+    background:#ee2bcd;
+    background: -webkit-linear-gradient(to top, #d7d2cc, #ee2bcd);
+    background: linear-gradient(to top, #d7d2cc, #ee2bcd);
+    font-family: 'ubuntu', sans-serif;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed; 
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    margin: 20px; 
+    gap: 20px; 
+}
+
+.form-control {
+    background-color:#ee2bcd (255, 255, 255, 0.2);
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    color: #ee2bcd;
+}
+
+.btn {
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: yellow;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #555;
+}
+
+.form-label {
+    font-family: 'ubuntu', sans-serif;
+    font-size: 18px;
+    color:blue;
+}
+
+.form-container {
+    margin-top: 20px; 
+}
+
+h2 {
+    margin: 10px;
+    font-family: 'ubuntu', sans-serif;
+    font-size: 40px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+h1 {
+    margin: 10px;
+    font-family: 'ubuntu', sans-serif;
+    font-size: 60px;
+    color: white;
+    margin-bottom: 20px;
+    text-align: center;
+    text-shadow: 15px 15px 15px rgba(239, 78, 78, 0.3);
+}
+
+.message {
+    color: #EE3209;
+    font-weight: bold;
+    text-align: center;
+}
