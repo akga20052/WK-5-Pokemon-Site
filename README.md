@@ -11,7 +11,7 @@ This project is a web application that allows users to search for Pokémon and v
 
 ## Installation
 
-1. Clone the repository: `git clone https://github.com/yourusername/pokemon-search.git`
+1. Clone the repository: `git clone https://github.com/yourusername/pokemon-search.git](https://github.com/akga20052/WK-5-Pokemon-Site.git`
 2. Navigate to the project directory: `cd pokemon-search`
 3. Install the requirements: `pip install -r requirements.txt`
 4. Run the application: `flask run`
