@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 
 {% block styles %}
-  <link rel="stylesheet" href="../static/styles/login.css"> 
+<link rel="stylesheet" href="{{ url_for('static', filename='login.css') }}">
 {% endblock %}
 
 {% block title %}
@@ -14,11 +14,11 @@
     <form method="POST" class="w-50 mx-auto">
         {{ form.hidden_tag() }}
         <div class="mb-3">
-          {{ form.email(class='form-control', placeholder='Email Address')}}
+          {{ form.email(class='form-control', placeholder='Email Address', autocomplete='email')}}
           <div id="emailHelp" class="form-text">We'll Never Share Or Sell Your Personal Information.</div>
         </div>
         <div class="mb-3">
-          {{ form.password(class='form-control', placeholder='Password') }}
+          {{ form.password(class='form-control', placeholder='Password', autocomplete='current-password') }}
         </div>
         {{ form.submit_btn(class='btn btn-dark d-block mx-auto mt-5') }}
     </form>

@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block styles %}
-    <link rel="stylesheet" href="../static/styles/battle.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='battle.css') }}">
 {% endblock %}
 
 {% block title %}
@@ -9,7 +9,8 @@
 {% endblock %}
 
 {% block content %}
-    {% include './includes/nav.html' %}
+<div class="pokemon-background">
+    {% include 'nav.html' %}
 
     <h1>Battle Progress</h1>
 
@@ -81,5 +82,5 @@
             </div>
         </div>
     </div>
-
+</div>
 {% endblock %}

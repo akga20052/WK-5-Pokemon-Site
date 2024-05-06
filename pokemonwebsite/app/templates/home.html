@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block styles %}
-<link rel="stylesheet" href="../static/styles/login.css"> 
+<link rel="stylesheet" href="{{ url_for('static', filename='home.css') }}">
 {% endblock %}
 
 {% block title %}
@@ -9,7 +9,7 @@
 {% endblock %}
 
 {% block content %}
-{% include './includes/nav.html'%}
+{% include 'nav.html'%}
     <div class="container">
         <h2 class="home-h2">Welcome {{ current_user.first_name }}, Glad To Have You Here!</h2>
         <h2 class="home-h2">Prepare Yourself For Battle.</h2>

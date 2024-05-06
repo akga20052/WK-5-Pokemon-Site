@@ -1,7 +1,7 @@
 {% extends 'base.html'%}
 
 {% block styles %}
-    <link rel="stylesheet" href="../static/styles/pokemon.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='pokemon.css') }}">
 {% endblock %}
 
 {% block title %}
@@ -9,7 +9,8 @@ Your Pokémon Team
 {% endblock %}
 
 {% block content %}
-{% include './includes/nav.html'%}
+<div class="pokemon-background">
+{% include 'nav.html'%}
 
 <h2>Your Team</h2>
 
@@ -26,10 +27,10 @@ Your Pokémon Team
                 <p class="card-text">Ability Name: {{ pokemon.ability_name }}</p>
             </div>
             <div class="card-body"> 
-                <a href="{{ url_for('main.release_pokemon', pokemon_id=pokemon.id) }}" class="btn btn-danger">Release</a>
+                <a href="{{ url_for('release_pokemon', pokemon_id=pokemon.id) }}" class="btn btn-danger">Release</a>
             </div>
         </div>
     {% endfor %}
 </div>
-
+</div>
 {% endblock %}

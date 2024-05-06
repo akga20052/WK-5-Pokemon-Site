@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block styles %}
-    <link rel="stylesheet" href="../static/styles/pokemon.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='pokemon.css') }}">
 {% endblock %}
 
 {% block title %}
@@ -9,7 +9,8 @@ The Ops Teams
 {% endblock %}
 
 {% block content %}
-{% include './includes/nav.html'%}
+<div class="pokemon-background">
+{% include 'nav.html'%}
 
 
 <h1>The Ops' Teams</h1>
@@ -17,7 +18,7 @@ The Ops Teams
 {% for user in other_users %}
   <h2>{{ user.first_name }}'s Team:</h2>
   <div style="text-align: center;">
-    <a href="{{ url_for('main.battle', enemy_user_id=user.id) }}" class="btn btn-primary">Battle</a>
+    <a href="{{ url_for('battle', enemy_user_id=user.id) }}" class="btn btn-primary">Battle</a>
   </div>
   <div class="card-container">
     {% for pokemon in user.team_pokemons %}
@@ -31,5 +32,5 @@ The Ops Teams
     {% endfor %}
   </div>
 {% endfor %}
-
+</div>
 {% endblock %}

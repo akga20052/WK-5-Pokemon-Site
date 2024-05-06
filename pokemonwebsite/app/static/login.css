@@ -1,8 +1,8 @@
 body {
-    background: #ee2bcd;  
-    background: -webkit-linear-gradient(to top, #d7d2cc, #ee2bcd);  
-    background: linear-gradient(to top, #d7d2cc, #ee2bcd); 
-}    
+    background: url('../static/images/wallpaper.jpg');
+    background-repeat: repeat;
+    background-size: contain;
+}  
 
 .container {
     display: flex;
@@ -25,15 +25,15 @@ body {
 }
 
 .form-control {
-    background-color: #ee2bcd;
+    background-color: whitesmoke;
     border: none;
     border-radius: 5px;
     padding: 10px;
-    color: yellow;
+    color: rgb(11, 11, 0);
 }
 
 .form-text {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(240, 12, 12, 0.599);
 }
 
 

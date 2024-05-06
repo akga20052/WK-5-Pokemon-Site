@@ -8,26 +8,26 @@
         <ul class="navbar-nav">
           {% if current_user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ url_for('main.home') }}">Home</a>
+            <a class="nav-link active" aria-current="page" href="{{ url_for('home') }}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('main.get_pokemanes') }}">Pokemanes</a>
+            <a class="nav-link" href="{{ url_for('get_pokemanes') }}">Pokémon Names</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('main.team') }}">Your Team</a> 
+            <a class="nav-link" href="{{ url_for('team') }}">Your Team</a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('main.enemy_teams') }}">The Ops Teams</a> 
+            <a class="nav-link" href="{{ url_for('enemy_teams') }}">The Opposite Team</a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('auth.logout') }}">Logout</a>
+            <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
           </li>
           {% else %}
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="{{ url_for('auth.login') }}">Login</a>
+            <a class="nav-link active" aria-current="page" href="{{ url_for('login') }}">Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{{ url_for('auth.signup') }}">Signup</a>
+            <a class="nav-link" href="{{ url_for('signup') }}">Signup</a>
           </li>
           {% endif %}
         </ul>
